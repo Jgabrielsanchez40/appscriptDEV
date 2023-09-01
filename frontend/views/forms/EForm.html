@@ -1,0 +1,179 @@
+//<script type="text/jsx">
+
+function EForm() {
+  return (
+    <div>
+    <Form>
+        <section className="flex flex-col lg:flex-row m-5 p-2 md:p-5">
+            <div className="w-full md:p-2 bg-white rounded-lg shadow-md">
+                <h4 className="text-xl">Gerenciamiento de Viaje</h4>
+              
+                    <div className="flex flex-wrap gap-5 md:gap-10 m-3 mt-10">
+                        <div className="text-sm">
+                            <span className="bg-green-500 align-middle w-4 h-4 inline-block mr-1 -mt-1"></span>
+                                Evaluación del Viaje
+                        </div>
+                    </div>
+                    <div className="space-y-5 mt-2">
+                        <div className="flex flex-col md:flex-row items-center">
+                            <div className="w-full md:w-1/5 p-3">
+                                Información General
+                            </div>
+                            <div className="flex flex-col md:flex-col w-[100%] bg-gray-50 rounded-l p-2">
+                                <div className="flex w-full">
+                                    <span className="text-center leading-10 mr-1 text-black w-[33%]">
+                                        <Item name="nombreOrganizacion" label="Nombre Organizacion" rules={[{ required: true, message: "El campo es requerido"}]}>
+                                            <Input />
+                                        </Item>
+                                    </span>
+                                    <span className="text-center leading-10 mr-1 text-black w-[33%]">
+                                        <Item name="unidadServicio" label="Unidad de Servicio" rules={[{ required: true, message: "El campo es requerido"}]}>
+                                            <Input />
+                                        </Item>
+                                    </span>
+                                    <span className="text-center leading-10 mr-1 text-black w-[33%]">
+                                        <Item name="fechaViaje" label="Fecha del Viaje" rules={[{ required: true, message: "El campo es requerido"}]}>
+                                            <Input />
+                                        </Item>
+                                    </span>
+                                </div>
+                                <div className="flex w-full">
+                                    <span className="text-center leading-10 mr-1 text-black w-[33%]">
+                                        <Item name="viejeNecesario" label="Viaje Necesario" rules={[{ required: true, message: "El campo es requerido"}]}>
+                                            <Input />
+                                        </Item>
+                                    </span>
+                                    <span className="text-center leading-10 mr-1 text-black w-[33%]">
+                                        <Item name="motivoViaje" label="Motivo del Viaje" rules={[{ required: true, message: "El campo es requerido"}]}>
+                                            <Input />
+                                        </Item>
+                                    </span>
+                                    <span className="text-center leading-10 mr-1 text-black w-[33%]">
+                                        <Item name="validoCoorSeguridad" label="Validado Por Coordinar Seguridad" rules={[{ required: true, message: "El campo es requerido"}]}>
+                                            <Input />
+                                        </Item>
+                                    </span>
+                                </div>
+                                <div className="flex w-full">
+                                    <span className="text-center leading-10 mr-1 text-black w-[25%]">
+                                        <Item name="lugarSalida" label="Lugar de Salida" rules={[{ required: true, message: "El campo es requerido"}]}>
+                                            <Input />
+                                        </Item>
+                                    </span>
+                                    <span className="text-center leading-10 mr-1 text-black w-[25%]">
+                                        <Item name="horaSalida" label="Hora de Salida" rules={[{ required: true, message: "El campo es requerido"}]}>
+                                            <Input />
+                                        </Item>
+                                    </span>
+                                    <span className="text-center leading-10 mr-1 text-black w-[25%]">
+                                        <Item name="lugarLlegada" label="Lugar de Llegada" rules={[{ required: true, message: "El campo es requerido"}]}>
+                                            <Input />
+                                        </Item>
+                                    </span>
+                                    <span className="text-center leading-10 mr-1 text-black w-[25%]">
+                                        <Item name="horaLlegada" label="Hora de Llegada" rules={[{ required: true, message: "El campo es requerido"}]}>
+                                            <Input />
+                                        </Item>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div className="flex flex-col md:flex-row items-center">
+                            <div className="w-full md:w-1/5 p-3">
+                                Información Conductor
+                            </div>
+                            <div className="flex w-full bg-gray-50 rounded-l p-3">
+                                <span className="flex flex-col md:flex-col rounded-l p-3 text-center leading-10 mr-1 bg-gray-50 w-[100%] text-white">
+                                    <span className="text-center p-2 leading-10 mr-1 mb-2 bg-green-300 text-black">30%</span>
+                                    <span className="text-center p-2 leading-10 mr-1 bg-gray-300 text-black">10%</span>
+                                    <span className="text-center p-2 leading-10 mr-1 bg-gray-400 text-white">6%</span>
+                                    <span className="rounded-r p-3 text-center leading-10 mr-1 bg-gray-500  text-white">4%</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div className="flex flex-col md:flex-row items-center">
+                            <div className="w-full md:w-1/5 p-3">
+                                Informacion Pasajeros
+                            </div>
+                            <div className="flex w-full">
+                                <span className="rounded-l p-3 text-center leading-10 mr-1 bg-green-500 w-[40%] text-white">40%</span>
+                                <span className="text-center p-3 leading-10 mr-1 bg-green-300 w-[35%] text-black">35%</span>
+                                <span className="rounded-r p-3 text-center leading-10 mr-1 bg-gray-500 w-[25%] text-white">25%</span>
+                            </div>
+                        </div>
+                        <div className="flex flex-col md:flex-row items-center">
+                            <div className="w-full md:w-1/5 p-3">
+                                Evaluación del Viaje
+                            </div>
+                            <div className="flex flex-col md:flex-col w-[100%] bg-gray-50 rounded-l p-2">
+                                <div className="flex w-full">
+                                    <span className="text-center leading-10 mr-1 text-black w-[33%]">
+                                        <Item name="distanciadesdeBase" label="Distancia desde Base" rules={[{ required: true, message: "El campo es requerido"}]}>
+                                            <Input />
+                                        </Item>
+                                    </span>
+                                    <span className="text-center leading-10 mr-1 text-black w-[33%]">
+                                        <Item name="clima" label="Clima" rules={[{ required: true, message: "El campo es requerido"}]}>
+                                            <Input />
+                                        </Item>
+                                    </span>
+                                    <span className="text-center leading-10 mr-1 text-black w-[33%]">
+                                        <Item name="condicionVia" label="Condición de la Vía" rules={[{ required: true, message: "El campo es requerido"}]}>
+                                            <Input />
+                                        </Item>
+                                    </span>
+                                    
+                                </div>
+                                <div className="flex w-full">
+                                    <span className="text-center leading-10 mr-1 text-black w-[33%]">
+                                        <Item name="condicionVia" label="Condición de la Vía" rules={[{ required: true, message: "El campo es requerido"}]}>
+                                            <Input />
+                                        </Item>
+                                    </span>
+                                    <span className="text-center leading-10 mr-1 text-black w-[33%]">
+                                        <Item name="comunicacionDisponible" label="Comunicación Disponible" rules={[{ required: true, message: "El campo es requerido"}]}>
+                                            <Input />
+                                        </Item>
+                                    </span>
+                                    <div className="text-center leading-10 mr-1 text-black w-[33%]">
+                                        <Item name="horasViaje" label="Horas de Viaje" rules={[{ required: true, message: "El campo es requerido"}]}>
+                                            <Input />
+                                        </Item>
+                                    </div>
+                                </div>
+                                <div className="flex w-full">
+                                   <span className="text-center leading-10 mr-1 text-black w-[50%]">
+                                        <Item name="vehiculoPasajero" label="Vehiculos Pasajeros" rules={[{ required: true, message: "El campo es requerido"}]}>
+                                            <Input />
+                                        </Item>
+                                    </span>
+                                   <div className="text-center leading-10 mr-1 text-black w-[50%]">
+                                    
+                                        <Item name="horasTrabViaje" label="Hrs Trab. + Hrs Viaje" rules={[{ required: true, message: "El campo es requerido"}]}>
+                                            <Input />
+                                        </Item>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex flex-col md:flex-row items-center">
+                            <div className="w-full md:w-1/5 p-3">
+                                Punto Claves Para Emprender el Viaje
+                            </div>
+                            <div className="flex w-full">
+                                <span className="rounded-l p-3 text-center leading-10 mr-1 bg-green-500 w-[40%] text-white">40%</span>
+                                <span className="text-center p-3 leading-10 mr-1 bg-green-300 w-[35%] text-black">35%</span>
+                                <span className="rounded-r p-3 text-center leading-10 mr-1 bg-gray-500 w-[25%] text-white">25%</span>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </section>
+    </Form>
+    </div>
+  )
+}
+
+//</script>
