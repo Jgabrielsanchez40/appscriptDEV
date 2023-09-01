@@ -1,0 +1,59 @@
+//<script type="text/jsx">
+
+function Usuarios() {
+    const [dataSource, setdataSource] = useState([]);
+    useEffect(listarUsuarios, [])
+    const history = useHistory()
+    /* function cantRow() {
+      google.script.run.withSuccessHandler(res => {
+        const a = res
+           console.log(res)
+      }).cantRows();
+    } */
+
+    function listarUsuarios() {
+       google.script.run.withSuccessHandler(res => {
+        const usuario = JSON.parse(res);
+        let arreglo = [];
+        
+
+        usuario.map(user => {
+          arreglo.push({
+            key: user.id,
+            ...user,
+            acciones: <Button onClick={() => { history.push("/FormRegistre/" + user.id) }}>Editar</Button>
+          })
+        })
+        setdataSource(arreglo);
+       }).listarUsuarios();
+      }
+             
+      const columns = [
+        {
+          title: 'Nombre Completo',
+          dataIndex: 'nombreCompleto',
+          key: 'nombreCompletome',
+        },
+        {
+          title: 'Correo',
+          dataIndex: 'correo',
+          key: 'correo',
+        },
+        {
+          title: 'Password',
+          dataIndex: 'password',
+          key: 'password',
+        },
+        {
+          title: 'Acciones',
+          dataIndex: 'acciones',
+          key: 'acciones',
+        },
+      ];
+    
+      return (
+        <Table dataSource={dataSource} columns={columns} />
+      )
+    }
+    
+//</script>

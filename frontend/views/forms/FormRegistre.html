@@ -1,15 +1,48 @@
 //<script type="text/jsx">
 
 function FormRegistre() {
+    
+    const [form] = Form.useForm();
+
+     const { id } = useParams();
+  
+
+    useEffect(() => {
+      if(id) {
+        google.script.run.withSuccessHandler(res => {
+          console.log(res)
+        })
+      } 
+    }, []) 
 
     const guardarRegistro = (datosForm) => {
-        console.log(datosForm);
+
+        notificacionGuardando("Guardando Usuario");
+        const id = v4();
+        const dato = {
+            id: id,
+            nombreCompleto: datosForm.nombreCompleto,
+            correo: datosForm.correo,
+            password: datosForm.password.value,
+        };
+        google.script.run.withSuccessHandler(resp => {
+            notificacionTareaTerminada(resp.titulo, resp.descripcion);
+            Semail(dato)
+            form.resetFields();
+        }).guardarUsuario(JSON.stringify(dato));
+       // }).guardarUsuario(JSON.stringify( id, ...datosForm ));
+    }
+
+    function Semail(dato) {
+      google.script.run.withSuccessHandler(resp => {
+        console.log("Data")
+      }).email(dato)
     }
 
   return (
     <div className="px-20">
         <h2 className="text-center font-bold text-xl my-6">Formulario Registro</h2>
-        <Form onFinish={guardarRegistro} layout="vertical">
+        <Form form={form} onFinish={guardarRegistro} layout="vertical">
             <Item name="nombreCompleto" label="Nombre Completo" rules={[
                 { required: true, message: "El campo de nombre es requerido"}]}>
                 <Input />
@@ -19,12 +52,34 @@ function FormRegistre() {
                 { required: true, message: "El campo de correo es requerido"}]}>
                 <Input />
             </Item>
-            <Item name="password" label="Password" rules={[
-                { required: true, message: "El campo password es requerido"}]}>
-                <Password />
+            <Item name="password" label="Password" value={Input.value} rules={[
+                { required: false, message: "El campo password es requerido"}]}>
+                <Select 
+                labelInValue
+                defaultValue={{
+                  value: ' ',
+                  label: ' ',
+                }}
+                style={{
+                  width: 120,
+                }}
+                options={[
+                  {
+                    value: 'jack',
+                    label: 'Jack (100)',
+                  },
+                  {
+                    value: 'lucy',
+                    label: 'Lucy (101)',
+                  },
+                ]}
+                />
             </Item>
             <Item  className="text-center">
                 <Button htmlType="submit">Guardar</Button>
+            </Item>
+            <Item  className="text-center">
+                <Button onClick={<Usuarios />}>User</Button>
             </Item>
         </Form>
     </div>

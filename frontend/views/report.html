@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base target="_top">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <style>
+       body{
+        font-family: "Roboto";
+       }
+       .container{
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+        align-content: center;
+        border-radius: 40px 10px;
+        background-color: rgb(249, 250, 253);;
+       }
+       .card-header{
+        padding: .1rem;
+        background-color: rgb(197, 199, 206);
+        height: 4rem;
+        border-radius: 40px 10px;
+       }
+
+       .spa{
+        margin-top: 18px;
+        margin-left: 14px;
+       }
+       .card-body{
+        margin-left: 14px;
+       }
+       .btn{
+        background-color: #464846;
+        color: white;
+        padding: 15px 25px;
+        text-decoration: none;
+        border-radius: 40px 40px 40px 40px;
+       }
+
+       .btn:hover {
+        background-color: #0f2b9d;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <p class="spa">Nueva Solicitud GV Cargado</p>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Solicitud Realizado Por: <?= usuario.correo ?></h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="https://script.google.com/a/macros/sinoenergycorp.com/s/AKfycbyeusQ4-SRLUUgroiKeANpu1HKvnMrRy0VkMvlu18G8/dev" class="btn">Go somewhere</a>
+              </div>
+        </div>
+    </div>
+</body>
+
+</html>

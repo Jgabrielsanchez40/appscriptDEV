@@ -5,10 +5,13 @@
         return(
             <Router>
                 <Header />
-                <Redirect to="/"
-/>                <Switch>
+                <Redirect to="/"/>
+                <Switch>
                     <Route exact path="/" component={Inicio} />
-                    <Route exact path="/FormRegistre" component={FormRegistre} />
+                    <Route exact path="/FormRegistre/:id?" component={FormRegistre} />
+                    <Route exact path="/Usuarios" component={Usuarios} />
+
+                    <Route exact path="/EForm" component={EForm} />
                 </Switch>
             </Router>
         );
